@@ -42,6 +42,20 @@ p {
   height: 100vh;
   background-color: #111;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
 
 #uv-error {
   color: #ff6666 !important;
@@ -211,10 +225,11 @@ footer a:hover {
 }
 
 .input-wrapper {
-  position: relative; /* <-- this makes .suggestions-list anchor to it */
+  position: relative;
   display: inline-block;
-  width: 350px; /* match your #uv-address width */
+  width: 350px;
 }
+
 
 
 
