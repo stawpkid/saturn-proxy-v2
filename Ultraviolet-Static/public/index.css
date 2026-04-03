@@ -541,3 +541,147 @@ footer a:hover,
     max-width: 260px;
   }
 }
+/* SaturnAI popup */
+.saturnai-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+  animation: popupFade 0.25s ease;
+}
+
+.saturnai-popup.hidden {
+  display: none;
+}
+
+.saturnai-popup-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  padding: 32px 24px;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 28, 0.96) 0%,
+    rgba(10, 10, 18, 0.98) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  overflow: hidden;
+}
+
+.saturnai-popup-glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.22), transparent 70%);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+}
+
+.saturnai-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #d7c5ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.saturnai-popup-card h2 {
+  margin: 0 0 12px;
+  color: white;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.saturnai-popup-card p {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.saturnai-popup-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.saturnai-open-btn,
+.saturnai-dismiss-btn {
+  min-width: 140px;
+  height: 50px;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saturnai-open-btn {
+  color: white;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  box-shadow: 0 14px 35px rgba(139, 92, 246, 0.28);
+}
+
+.saturnai-open-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.saturnai-dismiss-btn {
+  color: white;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.saturnai-dismiss-btn:hover {
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-2px);
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .saturnai-popup-card {
+    padding: 26px 18px;
+    border-radius: 24px;
+  }
+
+  .saturnai-popup-card h2 {
+    font-size: 1.45rem;
+  }
+
+  .saturnai-open-btn,
+  .saturnai-dismiss-btn {
+    width: 100%;
+  }
+}
