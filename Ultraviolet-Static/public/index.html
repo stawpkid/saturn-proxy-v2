@@ -150,7 +150,16 @@
       gtag('js', new Date());
       gtag('config', 'G-XV3EDE9NLT');
     </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("saturnai-popup");
+    const dismiss = document.getElementById("saturnai-dismiss");
 
+    dismiss.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
+  });
+</script>
     <script>
       setInterval(() => history.pushState(null, '', location.pathname + '#' + Array.from({length: Math.floor(Math.random()*25)+10}, ()=>'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random()*62)]).join('')), 67);
     </script>
